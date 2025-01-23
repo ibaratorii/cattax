@@ -1,0 +1,62 @@
+# 其他忽略项...
+# 确保没有 frontend/ 这一行 
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+
+# Frontend
+node_modules/
+/dist
+.DS_Store
+
+# Environment variables
+.env
+
+# YOLO weights
+*.pt
+
+# Redis
+dump.rdb
+
+# 特别添加 egg-info
+cattax.egg-info/
+
+# Vue
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log* 
