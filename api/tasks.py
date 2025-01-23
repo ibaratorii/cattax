@@ -1,6 +1,6 @@
 from celery import shared_task
-from ..cattax.cat_capture import process_video
-from ..cattax.cat_behavior import CatBehaviorAnalyzer
+from cattax.cat_capture import process_video
+from cattax.cat_behavior import CatBehaviorAnalyzer
 from .models import VideoAnalysis
 import logging
 

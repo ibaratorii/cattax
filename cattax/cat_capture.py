@@ -119,12 +119,11 @@ def process_video(video_path, analysis_id):
 
             # 显示预览（添加进度条）
             progress = (frame_count / total_frames) * 100
-            progress_bar = f"Progress: {progress:.1f}%"
-            cv2.putText(frame, progress_bar, (10, 30), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
-            cv2.imshow("Processing Preview", frame)
+            
+            # 更新进度 - 确保最后一帧时设置为 100%
+            if frame_count == total_frames - 1:
+                progress = 100.0
 
-            # 更新进度
             VideoAnalysis.objects.filter(id=analysis_id).update(
                 progress=progress,
                 results={'frames': results_data}
@@ -145,9 +144,10 @@ def process_video(video_path, analysis_id):
         out.release()
         cv2.destroyAllWindows()
 
-        # 更新任务状态
+        # 确保在处理完成时设置 100% 进度
         VideoAnalysis.objects.filter(id=analysis_id).update(
             status='completed',
+            progress=100.0,
             processed_video=f'processed/output_{analysis_id}.mp4'
         )
 

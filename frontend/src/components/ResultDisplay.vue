@@ -27,6 +27,7 @@ export default {
       if (!this.results || !this.results.frames || !this.results.frames.length) {
         return [];
       }
+      // 只返回最新一帧的结果
       return this.results.frames[this.results.frames.length - 1];
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div 
     @drop.prevent="handleDrop"
     @dragover.prevent
     class="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-gray-400 transition-colors cursor-pointer"
