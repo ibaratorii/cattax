@@ -49,6 +49,7 @@ node_modules/
 
 # YOLO weights
 *.pt
+yolo11x-seg.pt
 
 # Redis
 dump.rdb
